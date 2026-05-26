@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Showcase TikTok App Workflow Profile",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "status",
+    "device",
+    "apps",
+    "screen",
+    "inputs",
+    "coordinate_points",
+    "workflow",
+    "gallery_cleanup"
+  ],
+  "properties": {
+    "profile_id": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["draft_requires_calibration", "verified", "disabled"]
+    },
+    "device": { "type": "object" },
+    "apps": { "type": "object" },
+    "screen": { "type": "object" },
+    "inputs": { "type": "object" },
+    "coordinate_points": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["x", "y", "x_ratio", "y_ratio", "calibration_status"],
+        "properties": {
+          "x": { "type": "integer" },
+          "y": { "type": "integer" },
+          "x_ratio": { "type": "number" },
+          "y_ratio": { "type": "number" },
+          "description": { "type": "string" },
+          "calibration_status": { "type": "string" },
+          "verified_at": { "type": "string" }
+        }
+      }
+    },
+    "workflow": {
+      "type": "array",
+      "items": { "type": "object", "required": ["id", "type"] }
+    },
+    "gallery_cleanup": {
+      "type": "array",
+      "items": { "type": "object", "required": ["id", "type"] }
+    }
+  }
+}

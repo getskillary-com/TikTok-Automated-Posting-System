@@ -1,0 +1,54 @@
+# Python/cache artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.local
+
+# Runtime output, logs, and local state
+run_log/
+storage/
+.test_tmp/
+Microsoft/
+*.log
+*.db
+*.sqlite
+*.sqlite3
+*.bak
+*.bak.*
+
+# Local dependency/runtime bundles
+.paddle_deps/
+platform-tools/
+
+# Operator shared-drive content and generated imports
+shared_drive/
+
+# Automation run captures
+workflow_database/devices/*
+!workflow_database/devices/README.md
+workflow_database/index.json
+workflow_database/runs/
+upload_system/runs/
+upload_system/upload_system.egg-info/
+
+# Media and binary payloads
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.xlsx
+*.xls
+*.zip
+*.whl

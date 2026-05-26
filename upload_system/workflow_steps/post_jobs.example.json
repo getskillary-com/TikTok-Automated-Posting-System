@@ -1,0 +1,41 @@
+{
+  "defaults": {
+    "publish_mode": "scheduled",
+    "account_type": "marketing",
+    "schedule_timezone": "America/Sao_Paulo"
+  },
+  "jobs": {
+    "morning": {
+      "video": ".\\videos\\morning.mp4",
+      "caption": "Morning caption",
+      "schedule": {
+        "date": "2026-04-30",
+        "time": "08:00"
+      }
+    },
+    "noon": {
+      "video": ".\\videos\\noon.mp4",
+      "caption": "Noon caption",
+      "schedule": {
+        "date": "2026-04-30",
+        "time": "12:00"
+      }
+    },
+    "evening": {
+      "video": ".\\videos\\evening.mp4",
+      "caption": "Evening caption",
+      "schedule": {
+        "date": "2026-04-30",
+        "time": "18:00"
+      }
+    },
+    "showcase-product": {
+      "account_type": "showcase",
+      "publish_mode": "immediate",
+      "video": ".\\videos\\product.mp4",
+      "caption": "Product caption",
+      "product_link": "https://shop.example.com/product/123",
+      "product_name": "Product keyword"
+    }
+  }
+}

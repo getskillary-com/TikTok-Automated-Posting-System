@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Phone Workflow Profile",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "status",
+    "device",
+    "apps",
+    "screen",
+    "inputs",
+    "runner",
+    "coordinate_points",
+    "workflow"
+  ],
+  "properties": {
+    "profile_id": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft_requires_calibration",
+        "calibrated_to_pre_publish_requires_publish_approval",
+        "verified",
+        "disabled"
+      ]
+    },
+    "account_type": {
+      "type": "string",
+      "enum": ["marketing", "showcase"]
+    },
+    "device": { "type": "object" },
+    "apps": { "type": "object" },
+    "screen": { "type": "object" },
+    "inputs": { "type": "object" },
+    "runner": {
+      "type": "object",
+      "required": ["script", "default_account_type"],
+      "properties": {
+        "script": { "type": "string" },
+        "default_account_type": {
+          "type": "string",
+          "enum": ["marketing", "showcase"]
+        },
+        "default_publish_mode": { "type": "string" },
+        "supported_publish_modes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "final_exit_action": { "type": "string" },
+        "supports_final_publish_guard": { "type": "boolean" },
+        "supports_pipeline_dry_run": { "type": "boolean" }
+      }
+    },
+    "coordinate_points": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["x", "y", "x_ratio", "y_ratio", "calibration_status"],
+        "properties": {
+          "x": { "type": "integer" },
+          "y": { "type": "integer" },
+          "x_ratio": { "type": "number" },
+          "y_ratio": { "type": "number" },
+          "description": { "type": "string" },
+          "calibration_status": { "type": "string" },
+          "verified_at": { "type": "string" }
+        }
+      }
+    },
+    "workflow": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type"]
+      }
+    },
+    "workflow_variants": { "type": "object" },
+    "gallery_cleanup": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type"]
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "default": "Default caption for videos that do not have a specific preset.",
+  "videos": {
+    "1.1.mp4": "Good morning",
+    "demo.mp4": "Caption used when the selected file is demo.mp4.",
+    "demo": "Caption used when the selected file stem is demo."
+  },
+  "presets": {
+    "product": "Product preset caption. Replace this with your real copy.",
+    "daily": "Daily preset caption. Replace this with your real copy."
+  }
+}

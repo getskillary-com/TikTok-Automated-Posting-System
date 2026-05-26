@@ -1,0 +1,16 @@
+{
+  "defaults": {
+    "publish_mode": "scheduled",
+    "schedule_timezone": "America/Sao_Paulo"
+  },
+  "jobs": {
+    "test-1": {
+      "video": ".\\1.1.mp4",
+      "caption": "Good morning",
+      "schedule": {
+        "date": "2026-04-30",
+        "time": "08:00"
+      }
+    }
+  }
+}
